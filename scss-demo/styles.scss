@@ -1,11 +1,108 @@
 /* Variables will follow */
-//colors
+// Colors
 $body-background-color: darkred;
-$form-background-color: white;
+$form-background-color: #d6bb81;
 $headline-color: white;
-$input-color: white;
+$input-color: #f6Ecd5;
 
 body {
     background-color: $body-background-color;
+}
+
+h1 {
+    color: $headline-color;
+}
+
+$break-small: 480px;
+$break-medium: 960px;
+$break-large: 1600px;
+
+@mixin flex-container($axis, $wrap: nowrap) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: $axis $wrap;
+    -ms-flex-flow: $axis $wrap;
+    flex-flow: $axis $wrap;
+}
+
+@mixin breakpoint($break) {
+    @if $break == large {
+        @media (max-width: $break-large) { @content; }
+    }
+    @else if $break == medium {
+        @media (max-width: $break-medium) { @content; }
+    }
+    @else if $break == small {
+        @media (max-width: $break-small) { @content; }
+    } 
+    @else {
+    @media ($break) { @content; }
+    }
+}
+
+#contactform {
+    background-color: $form-background-color;
+    padding: 10px;
+
+    fieldset {
+        @include flex-container(column);
+        margin: 0;
+
+        div {
+            @include flex-container(row);
+            align-items: flex-start;
+
+            @include breakpoint(small) {
+                flex-direction: column;
+            }
+        }
+    }
+
+    label {
+        
+        @include breakpoint(large) {
+            margin: 5px 10px;
+            padding-bottom: 5px;
+            text-align: right;
+            width: 30%;
+        }
+
+        @include breakpoint(medium) {
+            width: 30%;
+            margin: 10px 10px;
+            text-align: right;
+        }
+    
+       
+        @include breakpoint(small) {
+            text-align: left;
+            margin: 0;
+        }
+    }
+    
+    input, textarea {
+        background-color: $input-color;
+        flex: 2;
+      
+        @include breakpoint(medium) {
+            width: 70%;
+            margin-top: 10px;  
+        } 
+
+        @include breakpoint(small) {
+            width: 100%;
+            margin: 5px 0;
+        }   
+
+    }
+
+    input[type="submit"] {
+        margin-top: 10px;
+        align-self: flex-start;
+        width: auto;
+        padding: 8px;
+    }
 }
 
