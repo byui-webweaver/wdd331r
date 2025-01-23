@@ -28,6 +28,10 @@ h1 a {
   color: #333;
 }
 
+li {
+  font-family: "Lora", serif;
+}
+
 nav a,
 section a {
   color: #666;

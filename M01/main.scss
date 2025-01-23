@@ -25,6 +25,7 @@ h1, h2 {
 }
 
 h1 {
+    
     text-align: center;
     font-size: 4em;
     font-weight: 500;
@@ -33,6 +34,10 @@ h1 {
 h1 a {
     text-decoration: none;
     color: $body-color;
+}
+
+li {
+    font-family: 'Lora', serif;
 }
 
 nav,
