@@ -1,33 +1,40 @@
+
 .card-grid {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     
 }
-.card {
-    border: 1px solid darkslategrey; /* Optional: a border for the cards */
-    display: flex; /* Allows for flexbox styling */
+
+/* Row grid card styles */
+.row-grid .card {
+    border: 1px solid darkslategrey;
+    border-radius: 5px; 
+    display: flex; 
     flex-direction: column; /* Stacks image and title vertically */
-    justify-content: flex-start; /* Centers the content vertically */
-    align-items: center; /* Centers the content horizontally */
-    flex: 1 0 auto;
+    justify-content: flex-start; 
+    width: 100%;
     max-width: 400px;
+    align-items: center; /* Centers the content horizontally */
+    flex: 1 0 auto; /* Allows card to grow and shrink */
   }
 
 /* Styles for the row-grid */
 .row-grid {
-    display: flex; /* Enables flexbox layout */
+    display: flex;
     flex-wrap: wrap; /* Allows cards to wrap to the next line */
+    gap: 15px; /* Space between cards */
+    padding: 10px;
+    
     width: 80%;
-    max-width: 1400px;
-    gap: 10px; /* Space between cards */
-    padding: 10px; /* Optional padding around the grid */
-    justify-content: flex-start;
+    margin: 0 auto;
+
   }
 
   .row-grid img {
-    height: 170px;
-    width: 100%;
-    object-fit: cover;
+    height: 170px; /* Each image same height */
+    width: 100%; /* Image fills the card entire card width */
+    max-width: 400px;
+    object-fit: cover; /* Ensures aspect ratio is maintained and not stretch/condense the image */
 
   }
 
@@ -35,3 +42,49 @@
     margin: 0;
     align-items: end;
   }
+
+  /* Styles for column grid card */
+
+  .col-grid .card {
+    border: 1px solid darkslategrey; 
+    border-radius: 5px;
+    display: flex; 
+    flex-direction: column; /* Stacks image and title vertically */
+    max-width: 200px;
+    max-height: 400px;
+    justify-content: flex-start;
+    flex: 1 0 auto; /* Allows card to grow and shrink */
+  }
+
+  .col-grid h2 {
+    margin: 0;
+    text-align: center;
+
+
+  }
+
+  .col-grid img {
+    height: 100%; /*Image fill entire height of card */
+    max-height: 400px; 
+    width: 200px; /* Eack image same width */
+    object-fit: cover; /* Aspect ratio maintained */
+
+  }
+
+  .col-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: 2000px; 
+    width: 60%;
+    max-width: 1000px;
+    
+    padding-top: 40px;
+    justify-content: flex-start;
+   
+  }
+
+  
+
+ 
