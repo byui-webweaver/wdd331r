@@ -74,16 +74,16 @@
 
   .col-grid {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: column; /* Column direction */
+    flex-wrap: wrap; /* Allow items to wrap on next line */
     gap: 15px;
-    height: 2000px; 
-    width: 70%;
+    height: 2000px; /* Set a height for the column grid allowing cards to wrap */
+    width: 70%; 
     max-width: 1000px;
     padding-top: 40px;
-    justify-content: flex-start;
-    align-items: start;
-    margin: 0 auto;
+    justify-content: flex-start; /* Align items to the start of the container vertically */
+    align-items: start; /* Align items to the start of the container horizontally */
+    margin: 0 auto; /* Center on the page */
    
   }
 
