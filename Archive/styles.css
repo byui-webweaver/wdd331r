@@ -53,9 +53,8 @@
     max-width: 200px;
     max-height: 400px;
     justify-content: flex-start;
-    align-items: start;
     flex: 1 0 auto; /* Allows card to grow and shrink */
-    margin: 0 auto;
+  
   }
 
   .col-grid h2 {
@@ -81,9 +80,10 @@
     height: 2000px; 
     width: 60%;
     max-width: 1000px;
-    
     padding-top: 40px;
     justify-content: flex-start;
+    align-items: start;
+    margin: 0 auto;
    
   }
 
