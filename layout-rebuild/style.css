@@ -7,12 +7,12 @@ header {
   display: flex;
   flex-direction: column;
 }
-header__content {
+header .header__content {
   display: flex;
   flex-direction: column;
 }
-header__logo-text svg {
+header .header__logo-text svg {
   width: 100px;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=style.css.map */
