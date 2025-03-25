@@ -1,22 +1,170 @@
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
+$primary-color: rgb(0, 125, 165);
+
+//Header styling
+.header {
     width: 100%;
     display: flex;
     flex-direction: column;
 
-    .header__content {
+    &__content {
         display: flex;
-        flex-direction: column;
+        flex-direction: column; 
    }
 
-    .header__logo-text {
-        svg{
-            width: 100px;
+   &__banner {
+    display: flex;
+    justify-content: space-between;
 
+   }
+
+   &__logo-svg {
+    width: 10em;
+    justify-items: center;
+    align-items: center;
+   }
+
+   &__logo-text {
+    margin-left: 5px;
+   }
+
+   &__navigation {
+    background-color: $primary-color;
+    padding: 20px;
+    color: white;
+    font-size: 1.8em;
+    text-align: end;
+   }
+
+   &__left-side {
+    display: flex;
+   }
+
+   &__right-side {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+   }
+
+   &__search-icon {
+    background: none;
+    border: none;
+    padding: 10px;
+   }
+
+   &__btn-signin {
+    display: flex;
+    background-color: $primary-color;
+    color: white;
+    border: $primary-color;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+   }
+
+   &__btn-svg {
+    width: 16px;
+    margin-right: 5px;
+    fill: white;
+   }
+
+   &__hero-box {
+    position: relative;
+
+   }
+
+   &__hero-img {
+        img {
+            width: 100vw;
         }
-       
+   }
+
+   &__hero-left {
+    position: absolute;
+    bottom: 2em;
+    left: 15em;
+    z-index: 1;
+    width: 40%;
+
+        h2 {
+            margin: 15px 0 5px;
+            font-size: 45px;
+            color: white;
+        }
+
+        p{
+            margin: 10px 0;
+            font-size: 20px;
+            color: white;
+        }
+
+        hr {
+            height: 4px;
+            background-color: $primary-color;
+            width: 4em;
+            border: none;
+            margin: 0;   
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 10px 0;
+            color: $primary-color;
+        }
+
+
+    } 
+   
+} 
+
+//Main styling
+
+//Learn section
+
+.learn {
+
+    &__text {
+        display: flex
+;
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: baseline;
+        margin-bottom: 1rem;
+    
+
+        h2 {
+           font-size: 2rem; 
+           font-weight: 100;
+           line-height: 1.2;
+        }
+
+        p {
+            font-size: 1.125rem;
+        }
+
+        button {
+            display: flex;
+            background-color: $primary-color;
+            color: white;
+            height: 1.5rem;
+            width: 1.5rem;
+            border-radius: 2px;
+            justify-content: center;
+            align-items: center;
+            border: $primary-color;
+    
+        }
+    }
+
+    &__image-line {
+        display: flex;
+
+        img {
+            width: 200px;
+        }
     }
 }
