@@ -210,6 +210,12 @@ $breakpoint-desktop: 1024px;
         border-radius: 2px;
         border: $primary-color;
         margin-bottom: 30px;
+
+        &:hover {
+            background-color: $hover-color;
+            color: white;
+
+        }
     }
 
     &__image-line {
@@ -652,7 +658,7 @@ $breakpoint-desktop: 1024px;
             margin: 0;
            }
            &__btn-visit-newsroom {
-            @include button-styles(white, $primary-color, 10px , -radius);
+            @include button-styles(white, $primary-color, 10px);
             &:hover {
                 background-color: $hover-color;
                 color: white;
