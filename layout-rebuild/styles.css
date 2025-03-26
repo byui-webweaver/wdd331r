@@ -4,7 +4,6 @@
 }
 
 /*mixins for grid and flex*/
-/*Mobile*/
 /*Header styling*/
 .header {
   display: flex;
@@ -78,13 +77,11 @@
   margin-right: 5px;
   fill: white;
 }
-@media (max-width: 1024px) {
-  .header__hero-box {
-    position: relative;
-  }
-}
 .header__hero-img img {
   width: 100%;
+}
+.header__hero-box {
+  position: relative;
 }
 .header__hero-left {
   margin: 10px;
@@ -97,12 +94,18 @@
   margin: 0;
 }
 .header__hero-left button {
-  padding: 8px 15px;
-  margin: 10px 0;
   background-color: rgb(0, 125, 165);
   color: white;
+  padding: 10px 20px;
   border: none;
-  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin: 10px 0;
+}
+.header__hero-left button:hover {
+  background-color: rgb(33, 34, 37);
+  color: white;
 }
 .header__hero-left h2 {
   margin: 5px 0;
@@ -110,43 +113,42 @@
 .header__hero-left p {
   margin: 5px 0;
 }
+@media (min-width: 1024px) {
+  .header__hero-left {
+    position: absolute;
+    bottom: 2em;
+    left: 3em;
+    z-index: 1;
+    width: 40%;
+  }
+  .header__hero-left h2 {
+    margin: 15px 0 5px;
+    font-size: 45px;
+    color: white;
+  }
+  .header__hero-left p {
+    margin: 10px 0;
+    font-size: 20px;
+    color: white;
+  }
+  .header__hero-left hr {
+    height: 4px;
+    background-color: rgb(0, 125, 165);
+    width: 4em;
+    border: none;
+    margin: 0;
+  }
+  .header__hero-left button {
+    padding: 8px 15px;
+    margin: 10px 0;
+    color: white;
+  }
+  .header__hero-left button:hover {
+    background-color: white;
+    color: rgb(0, 125, 165);
+  }
+}
 
-/* @media (max-width: $breakpoint-desktop) {
-        position: absolute;
-        bottom: 2em;
-        left: 15em;
-        z-index: 1;
-        width: 40%;
-
-
-            h2 {
-            margin: 15px 0 5px;
-            font-size: 45px;
-            color: white;
-        }
-
-        p{
-            margin: 10px 0;
-            font-size: 20px;
-            color: white;
-        }
-
-        hr {
-            height: 4px;
-            background-color: $primary-color;
-            width: 4em;
-            border: none;
-            margin: 0;   
-        }
-
-        button {
-            padding: 8px 15px;
-            margin: 10px 0;
-            color: $primary-color;
-        }
-
-    }*/
-/*learn styling      */
 .learn {
   margin-top: 40px;
 }
@@ -190,7 +192,60 @@
 .learn__image p {
   margin: 8px;
 }
-/*welcome and discover styling*/
+@media (min-width: 1024px) {
+  .learn {
+    width: 100%;
+    max-width: 1200px;
+    justify-self: center;
+  }
+  .learn__text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-top: 4em;
+    margin-left: 5em;
+  }
+  .learn__text h2 {
+    font-size: 2rem;
+    font-weight: 100;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .learn__text p {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+  .learn__image-line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .learn__image {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 20em;
+    margin: 20px;
+  }
+  .learn__image img {
+    height: 200px;
+    width: 100%;
+  }
+  .learn__image h2 {
+    margin: 5px 0;
+  }
+  .learn__image p {
+    margin: 5px 0;
+  }
+}
+
 .welcome,
 .discover {
   display: flex;
@@ -236,10 +291,80 @@
   margin-bottom: 8px;
   border-radius: 5px;
   border: none;
+  padding: 10px 20px;
 }
 .welcome__church-finder-input,
 .discover__church-finder-input {
   width: 100%;
+}
+@media (min-width: 1024px) {
+  .welcome,
+  .discover {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .welcome__content,
+  .discover__content {
+    grid-column: 1/3;
+    grid-row: 1/-1;
+    background-color: rgb(0, 125, 165);
+    color: white;
+    padding: 120px 50px;
+  }
+  .welcome__content h1,
+  .discover__content h1 {
+    display: grid;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 300;
+  }
+  .welcome__image,
+  .discover__image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    grid-row: 1/-1;
+    margin: 0;
+  }
+  .welcome__image img,
+  .discover__image img {
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    object-fit: cover;
+  }
+  .welcome__church-finder-input, .welcome__church-finder-button, .welcome__btn-request-visit,
+  .discover__church-finder-input,
+  .discover__church-finder-button,
+  .discover__btn-request-visit {
+    background-color: white;
+    color: rgb(0, 125, 165);
+    padding: 10px;
+    border: none;
+    border-radius: -radius;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 25em;
+    height: auto;
+  }
+  .welcome__church-finder-input:hover, .welcome__church-finder-button:hover, .welcome__btn-request-visit:hover,
+  .discover__church-finder-input:hover,
+  .discover__church-finder-button:hover,
+  .discover__btn-request-visit:hover {
+    background-color: rgb(33, 34, 37);
+    color: white;
+  }
+  .welcome__church-finder-button, .welcome__btn-request-visit,
+  .discover__church-finder-button,
+  .discover__btn-request-visit {
+    width: auto;
+    padding: 8px 15px;
+  }
 }
 
 .questions {
@@ -294,16 +419,48 @@
   opacity: 0.5;
 }
 .questions__btn-view-more {
+  background-color: rgb(0, 125, 165);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
   width: 8em;
   margin: 20px 0;
   padding: 10px;
-  background-color: rgb(0, 125, 165);
-  border: none;
+}
+.questions__btn-view-more:hover {
+  background-color: rgb(33, 34, 37);
   color: white;
 }
+@media (min-width: 1024px) {
+  .questions .questions {
+    margin-top: 8em;
+  }
+  .questions .questions__content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    max-width: 1200px;
+  }
+  .questions .questions__list {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .questions .questions__item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 
-/*message styling*/
-.message .message {
+.message {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -311,7 +468,7 @@
   align-items: stretch;
   width: 100%;
 }
-.message .message__content {
+.message__content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -322,11 +479,11 @@
   justify-content: center;
   line-height: 1.6em;
 }
-.message .message__content h1 {
+.message__content h1 {
   font-weight: 100;
   text-align: center;
 }
-.message .message__image {
+.message__image {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -334,13 +491,13 @@
   align-items: center;
   margin: 0 20px;
 }
-.message .message__image img {
+.message__image img {
   width: 64px;
   height: 64px;
   object-fit: cover;
   border-radius: 50px;
 }
-.message .message__img-description {
+.message__img-description {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -348,29 +505,47 @@
   align-items: flex-start;
   margin-left: 20px;
 }
-.message .message__img-description h2 {
+.message__img-description h2 {
   font-weight: 200;
   margin-bottom: 0;
 }
-.message .message__img-description p {
+.message__img-description p {
   margin-top: 5px;
   text-align: left;
 }
+@media (min-width: 1024px) {
+  .message {
+    width: 100%;
+    margin: 10em 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .message__content {
+    width: 50%;
+    max-width: 800px;
+  }
+  .message__image {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+  }
+}
 
-/*community styling*/
-.community .community__content {
+.community__content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
 }
-.community .community__header {
-  grid-column: 1/-1;
+.community__header {
   text-align: center;
   font-weight: 100;
 }
-.community .community__image, .community .community__image-2, .community .community__image-3 {
+.community__image, .community__image-2, .community__image-3 {
   text-align: center;
   padding: 40px;
   display: flex;
@@ -379,22 +554,43 @@
   justify-content: center;
   align-items: center;
 }
-.community .community__image img, .community .community__image-2 img, .community .community__image-3 img {
+.community__image img, .community__image-2 img, .community__image-3 img {
   width: 288px;
   height: 288px;
   object-fit: cover;
   border-radius: 50%;
 }
-.community .community__image button, .community .community__image-2 button, .community .community__image-3 button {
-  padding: 10px 20px;
+.community__image button, .community__image-2 button, .community__image-3 button {
   background-color: rgb(0, 125, 165);
-  border: none;
   color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 10px 20px;
   margin-top: 20px;
+}
+.community__image button:hover, .community__image-2 button:hover, .community__image-3 button:hover {
+  background-color: rgb(33, 34, 37);
+  color: white;
+}
+@media (min-width: 1024px) {
+  .community .community__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5em 2fr;
+    grid-gap: 1rem;
+    margin: 20px;
+  }
+  .community .community__header {
+    grid-column: 1/-1;
+  }
 }
 
 /*news styling*/
 .news {
+  width: 100%;
   margin-top: 40px;
 }
 .news__content {
@@ -404,15 +600,19 @@
   justify-content: flex-start;
   align-items: stretch;
 }
+.news__image {
+  height: 100%;
+}
 .news__image img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .news__text {
   background-color: rgb(0, 125, 165);
   height: 100%;
   width: 100%;
-  padding: 20px;
+  padding: 50px 30px;
   color: white;
   margin-bottom: 50px;
 }
@@ -423,6 +623,41 @@
 .news__btn-visit-newsroom {
   padding: 10px;
   color: rgb(0, 125, 165);
+}
+@media (min-width: 1024px) {
+  .news {
+    margin-top: 60px;
+  }
+  .news__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  .news__text {
+    grid-column: 2/4;
+    padding: 140px;
+    margin: 0;
+  }
+  .news__btn-visit-newsroom {
+    background-color: white;
+    color: rgb(0, 125, 165);
+    padding: 10px;
+    border: none;
+    border-radius: -radius;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .news__btn-visit-newsroom:hover {
+    background-color: rgb(33, 34, 37);
+    color: white;
+  }
+  .news__btn-visit-newsroom:hover {
+    background-color: rgb(33, 34, 37);
+    color: white;
+  }
 }
 
 /*explore styling*/
@@ -450,368 +685,23 @@
   height: 1px;
   background-color: rgb(0, 125, 165);
 }
-
-/*
-//Learn section
-
-.learn {
-    width: 100%;
-    max-width: 1200px;
-    justify-self: center;
-
-    &__text {
-        @include flex-layout(row, wrap, start, baseline);
-        gap: 1.5rem;
-        margin-top: 4em;
-        margin-left: 5em;
-
-        h2 {
-           font-size: 2rem; 
-           font-weight: 100;
-           line-height: 1.2;
-           margin: 0;
-        }
-
-        p {
-            font-size: 1.125rem;
-            margin: 0;
-        }
-
-        button {
-            @include flex-layout(row, wrap, center, center);
-            background-color: $primary-color;
-            color: white;
-            height: 1.5rem;
-            width: 1.5rem;
-            border-radius: 2px;
-            border: $primary-color;
-            margin: 0;
-        }
-    }
-
-    &__image-line {
-        @include flex-layout(row, wrap, center);
-    }
-
-    &__image {
-        width: 20em;
-        margin: 20px;
-
-
-        img {
-            height: 200px;
-            width: 100%;   
-        }
-
-        h2 {
-            margin: 5px 0;
-        }
-
-        p{
-            margin: 5px 0;
-        }
-    }
-}
-
-//welcome section styling
-.welcome {
-    @include grid-layout(repeat(3, 1fr));
+@media (min-width: 1024px) {
+  .explore__content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
-
-   &__content {
-    grid-column: 1 / 3;
-    grid-row: 1/ -1;
-    background-color: $primary-color;
-    color: white;
-    padding: 120px 50px;
-
-    h1 {
-        display: grid;
-        justify-content: flex-start;
-        align-items: center;
-        font-weight: 300;
-    }
-
-   }
-
-   &__image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    grid-row: 1 / -1;
-    img {
-        width: 100%;
-        height: 100%;
-        margin-left: 10px;
-        object-fit: cover; 
-
-    }
-   }
-   &__church-finder-input,
-   &__church-finder-button {
-    height: 2em;
-    color: $primary-color
-   }
-}
-
-//questions styling
-.questions {
-    @include flex-layout(column, wrap, center, center);
-    margin-top: 8em;
-    width: 100%;
-
-    &__content {
-        @include flex-layout(column, wrap, center, center);
-        width: 60%;
-        max-width: 1200px;
-
-        h1 {
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            font-weight: 300;
-        }
-
-
-    }
-
-    &__list {
-        width: 100%;
-        margin-top: 10px;
-        @include flex-layout(column);
-
-        p {
-            margin-left: 2em;
-        }
-
-        svg {
-            width: 16px;
-            color: $primary-color;
-            margin-left: 5px;
-        }
-    }
-
-    &__item {
-        @include flex-layout(row, wrap, space-between, center); 
-        padding-bottom: 10px;  
-    }
-
-    &__horizontal-line {
-
-            height: 1px;
-            width: 100%;
-            background-color: lightgray;
-            opacity: .5;
-
-    }
-
-    &__btn-view-more {
-        width: 8em;
-        margin: 30px 0;
-        padding: 10px;
-        background-color: $primary-color;
-        border: none;
-        color: white;
-    }  
-
-}
-
-//discover section styling
-.discover {
-    @include grid-layout(repeat(3, 1fr));
+    margin: 8rem auto;
     justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-
-   &__content {
-    grid-column: 1 / 3;
-    grid-row: 1/ -1;
-    background-color: $primary-color;
-    color: white;
-    padding: 120px 50px;
-
-    h1 {
-        display: grid;
-        justify-content: flex-start;
-        align-items: center;
-        font-weight: 300;
-    }
-
-   }
-
-   &__image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    grid-row: 1 / -1;
-    img {
-        width: 100%;
-        height: 100%;
-        margin-left: 10px;
-        object-fit: cover; 
-
-    }
-   }
-   &__btn-request-visit {
-    padding: 10px;
-    color: $primary-color;
-   }
+  }
+  .explore__image {
+    padding: 0 100px;
+  }
+  .explore__line {
+    width: 1px;
+    height: 10em;
+  }
 }
-
-//message styling
-.message {
-    @include flex-layout(column);
-    width: 100%;
-    margin: 10em 0;
-    justify-content: center;
-    align-items: center;
-
-
-    &__content {
-        @include flex-layout(column);
-        width: 50%;
-        max-width: 800px;
-        text-align: center;
-        justify-content: center;
-        line-height: 1.6em;
-
-
-        h1 {
-            font-weight: 100;
-            text-align: center;
-        }
-    }
-
-    &__image {
-        @include flex-layout(row, wrap, center, center);
-        margin-top: 2em;
-
-
-    }
-
-    img {
-        width: 64px;
-        height: 64px;
-        object-fit: cover;
-        border-radius: 50px;
-    }
-
-    &__img-description {
-       @include flex-layout(column, wrap, flex-start, flex-start);
-       margin-left: 20px;
-
-       h2 {
-        font-weight: 200;
-        margin-bottom: 0;
-
-       }
-
-       p {
-        margin-top: 5px;
-        text-align: left;
-       }
-    }
-}
-
-//community styling
-.community {
-    &__content {
-        @include grid-layout(repeat(3, 1fr), 5em 2fr, 1rem);
-        margin: 20px;
-    }
-
-    &__header {
-        grid-column: 1 / -1;
-        text-align: center;
-        font-weight: 100;
-    }
-
-    &__image,
-    &__image-2,
-    &__image-3 {
-        text-align: center;
-        padding: 40px;
-        @include flex-layout(column, wrap, center, center);
-
-        img {
-            width: 288px;
-            height: 288px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: $primary-color;
-            border: none;
-            color: white;
-            margin-top: 20px
-        }
-
-    }
-}
-
-//news styling
-
-.news {
-
-    margin-top: 30px;
-
-   &__content {
-    @include grid-layout(repeat(3, 1fr));
-    justify-content: center;
-    align-items: center;
-   }
-
-   &__image {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-
-    img {
-        width: 100%;
-        height: 100%;
-        margin-left: 10px;
-        object-fit: cover; 
-
-    }
-   }
-
-   &__text {
-    background-color: $primary-color;
-    height: 100%;
-    width: 100%;
-    grid-column: 2 / 4;
-    padding: 120px;
-    color: white;
-   }
-   &__btn-visit-newsroom {
-    padding: 10px;
-    color: $primary-color;
-   }
-}
-
-//explore styling
-.explore {
-
-    &__content {
-        @include flex-layout(row, wrap, center, center);
-        margin: 8rem auto;
-        justify-content: center;
-    }
-
-    &__image {
-        padding: 0 100px;
-    }
-
-    &__line {
-        width: 1px; 
-        height: 10em; 
-        background-color: $primary-color;
-
-    }
-}*/
 
 /*# sourceMappingURL=styles.css.map */
