@@ -74,7 +74,7 @@ $breakpoint-desktop: 1024px;
         padding: 20px;
         color: white;
         font-size: 1.8em;
-        text-align: end;
+        text-align: center;
     }
 
     &__left-side {
@@ -208,7 +208,6 @@ $breakpoint-desktop: 1024px;
         height: 1.5rem;
         width: 1.5rem;
         border-radius: 2px;
-        border: $primary-color;
         margin-bottom: 30px;
 
         &:hover {
@@ -248,8 +247,7 @@ $breakpoint-desktop: 1024px;
         justify-self: center;
 
         &__text {
-            @include flex-layout(row, wrap, start, baseline);
-            gap: 1.5rem;
+            @include flex-layout(row, wrap, flex-start, baseline);
             margin-top: 4em;
             margin-left: 5em;
 
@@ -302,8 +300,8 @@ $breakpoint-desktop: 1024px;
 //welcome and discover styling
 .welcome,
 .discover {
-    @include flex-layout(column);
-    flex-direction: column-reverse;
+    @include flex-layout(column-reverse);
+    
 
     &__content {
         width: 100%;
@@ -492,10 +490,9 @@ $breakpoint-desktop: 1024px;
     width: 100%;
 
     &__content {
-        @include flex-layout(column);
+        @include flex-layout(column, wrap, center);
         margin: 40px 20px;
         text-align: center;
-        justify-content: center;
         line-height: 1.6em;
 
         h1 {
@@ -678,9 +675,8 @@ $breakpoint-desktop: 1024px;
     }
 
     &__image {
-        @include flex-layout(column);
+        @include flex-layout(column, wrap, flex-start, center);
         margin: 30px 0;
-        align-items: center;
     }
 
     &__description {
@@ -699,7 +695,6 @@ $breakpoint-desktop: 1024px;
             &__content {
                 @include flex-layout(row, wrap, center, center);
                 margin: 8rem auto;
-                justify-content: center;
             }
         
             &__image {
